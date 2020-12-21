@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,18 +16,21 @@ import br.financeiro.hscastro.services.ContaService;
 @RequestMapping("/contas")
 public class ContaController {
 
+	
 	@Autowired
-	private ContaService serviceConta;
+	private ContaService<Conta> serviceConta;
 	
+	@PostMapping("/salvar")
+	public void salvar(@PathVariable Conta conta) {
+		serviceConta.salvar(conta);
+	}	
 	
-
 	@GetMapping("/editar/{id}")
 	public Conta getContaPorId(@PathVariable Long id) {
 		
 		return (Conta) serviceConta.buscarPorId(id);
 	}
 
-	
 	@GetMapping("/listar")
 	public List<Conta> getConta() {
 		

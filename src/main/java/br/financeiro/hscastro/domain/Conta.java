@@ -2,6 +2,15 @@ package br.financeiro.hscastro.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "contas")
 public class Conta implements Serializable {
 	
 	/**
@@ -9,10 +18,14 @@ public class Conta implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "numero", nullable = false, unique = true, length = 10)
 	private String numero;
 	
+	@Column(name ="saldo", nullable = false)
 	private double saldo;
 	
 	private Cliente cliente;

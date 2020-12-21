@@ -15,8 +15,10 @@ public abstract class AbstractDao<T, PK extends Serializable> {
 			(Class<T>) ((ParameterizedType) getClass().getGenericSuperclass())
 			.getActualTypeArguments()[0];
 	
+	
 	@PersistenceContext
 	private EntityManager entityManager;
+	
 	
 	protected EntityManager getEntityManager() {
 		return entityManager;
@@ -30,11 +32,11 @@ public abstract class AbstractDao<T, PK extends Serializable> {
 		entityManager.merge(t);
 	}
 	
-	public void delete(Long id) {
+	public void delete(PK id) {
 		entityManager.remove(entityManager.getReference(entityClass, id));
 	}	
 	
-	public T findById(Long id) {
+	public T findById(PK id) {
 		
 		return entityManager.find(entityClass, id);
 	}
