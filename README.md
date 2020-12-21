@@ -1,4 +1,9 @@
 # api-controle-financeiro-spring boot
+<li>controller cliente: Deverá retornar os dados de clientes.</li>
+<li>controller conta: Deverá retornar os dados das contas.</li>
+
+
+# Em desenvolvimento,...
 
 # aplicação-cliente
 
