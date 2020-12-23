@@ -37,7 +37,7 @@ public class ClienteController {
 	@GetMapping("/editar/{id}")
 	public Cliente getClientePorId(@PathVariable Long id) {
 		
-		return (Cliente) serviceCliente.buscarPorId(id);
+		return serviceCliente.buscarPorId(id);
 	}
 
 	
@@ -47,4 +47,5 @@ public class ClienteController {
 		List<Cliente> todosClientes = serviceCliente.listar(); 
 		return new ResponseEntity<>(todosClientes, HttpStatus.OK);
 	}
+	
 }

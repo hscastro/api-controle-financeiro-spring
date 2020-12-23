@@ -45,4 +45,21 @@ public class ContaServiceImpl implements ContaService<Conta> {
 		return dao.findAll();
 	}
 
+	@Override
+	public Conta getContaPorNumero(String numero) {
+		Conta conta = dao.findByNumero(numero);
+		
+		if(conta.getNumero().isEmpty()) {
+			return null;
+		}
+		return conta;
+	}
+	
+	@Override
+	public double getNovoSaldo(Conta conta, double valor) {
+		double saldo = conta.getSaldo();
+		saldo+=valor;		
+		return saldo;
+	}
+	
 }

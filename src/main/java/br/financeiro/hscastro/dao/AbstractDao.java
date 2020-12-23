@@ -8,6 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import br.financeiro.hscastro.domain.Conta;
+
 public abstract class AbstractDao<T, PK extends Serializable> {
 
 	@SuppressWarnings("unchecked")
@@ -39,6 +41,10 @@ public abstract class AbstractDao<T, PK extends Serializable> {
 	public T findById(PK id) {
 		
 		return entityManager.find(entityClass, id);
+	}
+	
+	public T findByNumero(String numero) {
+		return entityManager.find(entityClass, numero);
 	}
 	
 	public List<T> findAll(){

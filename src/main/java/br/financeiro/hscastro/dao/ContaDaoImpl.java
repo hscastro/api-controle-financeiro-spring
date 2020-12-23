@@ -5,5 +5,5 @@ import br.financeiro.hscastro.domain.Conta;
 
 @Repository
 public class ContaDaoImpl extends AbstractDao<Conta, Long> implements ContaDao<Conta> {
-	   //Não precisa de implementação
+	//Não precisa de implementação
 }

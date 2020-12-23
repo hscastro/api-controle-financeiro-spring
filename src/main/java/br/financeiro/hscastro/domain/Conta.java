@@ -28,7 +28,7 @@ public class Conta implements Serializable {
 	@Column(name ="saldo", nullable = false)
 	private double saldo;
 	
-	private Cliente cliente;
+	//private Cliente cliente;
 	
 	
 	public Long getId() {
@@ -55,13 +55,13 @@ public class Conta implements Serializable {
 		this.saldo = saldo;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+//	public Cliente getCliente() {
+//		return cliente;
+//	}
+//
+//	public void setCliente(Cliente cliente) {
+//		this.cliente = cliente;
+//	}
 
 	@Override
 	public int hashCode() {

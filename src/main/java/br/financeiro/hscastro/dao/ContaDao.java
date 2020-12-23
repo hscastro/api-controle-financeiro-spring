@@ -11,8 +11,12 @@ public interface ContaDao<T> {
 	public void delete(Long id);
 	
 	public T findById(Long id);
+	
+	public T findByNumero(String numero);
 
 	public List<T> findAll();
+	
+		
 }
 
 
